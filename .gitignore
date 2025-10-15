@@ -5,3 +5,4 @@ __pycache__
 archive
 .DS_Store
 logs
+*.yaml
