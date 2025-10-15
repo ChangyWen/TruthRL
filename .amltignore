@@ -1,3 +1,7 @@
 temp
 .env
 logs
+data/math/train.parquet
+data/gsm8k/train.parquet
+data/math/test.parquet
+data/math/train.parquet
