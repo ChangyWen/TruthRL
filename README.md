@@ -2,7 +2,7 @@
 
 Implementation of "TruthRL: Incentivizing Truthful LLMs via Reinforcement Learning".
 
-This repo fine-tunes an LLM to be more truth-seeking using a GRPO-style trainer (Group Relative Policy Optimization) with task-specific reward signals and evaluation hooks.
+This repo fine-tunes an LLM to be more truth-seeking using a GRPO-style (Group Relative Policy Optimization) trainer.
 
 📄 **Paper:** [https://arxiv.org/pdf/2509.25760](https://arxiv.org/pdf/2509.25760)
 
