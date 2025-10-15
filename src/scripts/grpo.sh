@@ -23,7 +23,7 @@ test_freq=20
 save_freq=100
 val_before_train=true
 save_path=/mnt/blob_output/v-dachengwen/TruthRL/logs_math-grpo-${timestamp}
-experiment_name=grpo-${timestamp}
+experiment_name=TruthRL-${timestamp}
 mkdir -p $save_path
 
 # Sampling params at rollouts
@@ -92,7 +92,7 @@ nohup python3 -m verl.trainer.main_ppo \
     trainer.default_local_dir=$save_path \
     trainer.critic_warmup=0 \
     trainer.logger=['wandb'] \
-    trainer.project_name='self_feedback_math' \
+    trainer.project_name='LLM-IDK' \
     trainer.experiment_name=$experiment_name \
     trainer.n_gpus_per_node=8 \
     trainer.nnodes=1 \
