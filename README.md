@@ -13,7 +13,7 @@ This repo fine-tunes an LLM to be more truth-seeking using a GRPO-style trainer 
 pip install packaging
 pip install ninja
 pip install https://github.com/Dao-AILab/flash-attention/releases/download/v2.8.0.post2/flash_attn-2.8.0.post2+cu12torch2.5cxx11abiFALSE-cp310-cp310-linux_x86_64.whl
-pip install vllm
+pip install vllm==0.8.5
 pip install onnxruntime-gpu
 pip install datasets
 pip install transformers
