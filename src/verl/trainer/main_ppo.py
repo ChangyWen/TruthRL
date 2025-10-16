@@ -282,9 +282,10 @@ class TaskRunner:
         reward_fn = load_reward_manager(
             config, tokenizer, num_examine=0, **config.reward_model.get("reward_kwargs", {})
         )
-        val_reward_fn = load_reward_manager(
-            config, tokenizer, num_examine=1, **config.reward_model.get("reward_kwargs", {})
-        )
+        # val_reward_fn = load_reward_manager(
+        #     config, tokenizer, num_examine=1, **config.reward_model.get("reward_kwargs", {})
+        # )
+        val_reward_fn = None
 
         resource_pool_manager = self.init_resource_pool_mgr(config)
 
@@ -292,7 +293,8 @@ class TaskRunner:
 
         # Create training and validation datasets.
         train_dataset = create_rl_dataset(config.data.train_files, config.data, tokenizer, processor, is_train=True)
-        val_dataset = create_rl_dataset(config.data.val_files, config.data, tokenizer, processor, is_train=False)
+        # val_dataset = create_rl_dataset(config.data.val_files, config.data, tokenizer, processor, is_train=False)
+        val_dataset = None
         train_sampler = create_rl_sampler(config.data, train_dataset)
 
         # Initialize the PPO trainer.
