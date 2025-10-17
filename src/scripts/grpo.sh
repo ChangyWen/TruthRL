@@ -3,7 +3,7 @@ set -x
 ########## start of important parameters ##########
 model_path=Qwen/Qwen3-1.7B
 train_files=data/omni_math_rule/omni_math_rule.parquet
-test_files="[data/math/aime.parquet, data/math/amc.parquet, data/math/minerva.parquet, data/math/olympiad_bench.parquet, data/math/math-500.parquet, data/gsm8k/test.parquet]"
+test_files="[data/math/aime.parquet]"
 norm_adv_by_std_in_grpo=False
 use_kl_loss=False
 kl_loss_coef=0.0
