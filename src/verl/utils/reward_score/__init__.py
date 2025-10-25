@@ -44,7 +44,7 @@ def default_compute_score(
         from . import gsm8k
 
         res = gsm8k.compute_score(solution_str, ground_truth)
-    elif data_source in ["gsm8k", "math", "aime", "amc", "minerva", "olympiad_bench", "omni_math_rule"]:
+    elif data_source in ["gsm8k", "math", "aime", "amc", "minerva", "olympiad_bench", "omni_math_rule", "math_dapo_self"]:
         from . import math_ternary
 
         res = math_ternary.compute_score(solution_str, ground_truth)
