@@ -2,7 +2,7 @@ set -x
 
 ########## start of important parameters ##########
 model_path=Qwen/Qwen3-1.7B
-train_files=data/omni_math_rule/omni_math_rule.parquet
+train_files=data/math_dapo/math_dapo.parquet
 test_files="[data/math/aime.parquet]"
 norm_adv_by_std_in_grpo=False
 use_kl_loss=False
@@ -14,8 +14,8 @@ max_response_length=$((1024 * 8))
 clip_ratio_low=0.2
 clip_ratio_high=0.28
 train_batch_size=64
-ppo_mini_batch_size=32
-ppo_micro_batch_size_per_gpu=4
+ppo_mini_batch_size=64
+ppo_micro_batch_size_per_gpu=8
 rollout_n=8
 gpu_memory_utilization=0.7
 timestamp=$(date +%s)

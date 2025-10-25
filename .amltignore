@@ -9,3 +9,4 @@ data/math/amc.parquet
 data/math/math-500.parquet
 data/math/minerva.parquet
 data/math/olympiad_bench.parquet
+data/omni_math_rule/omni_math_rule.parquet

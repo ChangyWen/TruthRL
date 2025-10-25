@@ -2,7 +2,8 @@ set -x
 
 source_dir=/mnt/blob_output/v-dachengwen/TruthRL/logs_math-grpo-1760692940
 # for i in 40 80 120; do
-for i in 160 200; do
+# for i in 160 200; do
+for i in 400; do
     if [ -f $source_dir/global_step_${i}/actor/huggingface/model.safetensors ]; then
         echo "model has been merged already"
     else
