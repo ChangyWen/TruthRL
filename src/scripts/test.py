@@ -217,12 +217,14 @@ if __name__ == "__main__":
     tokenizer = llm.get_tokenizer()
 
     datasets = [
-        ("/mnt/blob_output/v-dachengwen/data/gsm8k/test.parquet", "gsm8k"),
+        # ("/mnt/blob_output/v-dachengwen/data/gsm8k/test.parquet", "gsm8k"),
+        # ("/mnt/blob_output/v-dachengwen/data/math/amc.parquet", "amc"),
+        # ("/mnt/blob_output/v-dachengwen/data/math/math-500.parquet", "math-500"),
+        # ("/mnt/blob_output/v-dachengwen/data/math/minerva.parquet", "minerva"),
+        # ("/mnt/blob_output/v-dachengwen/data/math/olympiad_bench.parquet", "olympiad_bench"),
         ("/mnt/blob_output/v-dachengwen/data/math/aime.parquet", "aime"),
-        ("/mnt/blob_output/v-dachengwen/data/math/amc.parquet", "amc"),
-        ("/mnt/blob_output/v-dachengwen/data/math/math-500.parquet", "math-500"),
-        ("/mnt/blob_output/v-dachengwen/data/math/minerva.parquet", "minerva"),
-        ("/mnt/blob_output/v-dachengwen/data/math/olympiad_bench.parquet", "olympiad_bench"),
+        ("/mnt/blob_output/v-dachengwen/data/math/aime_2025.parquet", "aime_2025"),
+        ("/mnt/blob_output/v-dachengwen/data/math/beyond_aime.parquet", "beyond_aime"),
     ]
 
     if "actor/huggingface" in args.model_name:
