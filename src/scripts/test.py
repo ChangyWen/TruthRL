@@ -131,6 +131,22 @@ def compute_score(model_output: str, ground_truth: str, timeout_score: float = 0
         return -1.0
 
 
+def compute_score_gpqa(model_output: str, ground_truth: str) -> float:
+    if check_inability(model_output):
+        return 0.0
+    answer = remove_thinking_draft(model_output)
+    if isinstance(answer, str):
+        answer = last_boxed_only_string(answer)
+        if isinstance(answer, str):
+            answer = remove_boxed(answer)
+            if isinstance(answer, str):
+                if answer.upper() == ground_truth.upper():
+                    return 1.0
+                else:
+                    return -1.0
+    return -1.0
+
+
 def load_dataset(dataset_file, tokenizer):
     data = pd.read_parquet(dataset_file)
 
@@ -167,7 +183,10 @@ def main(
         all_lengths = []
         for j in range(len(outputs[i].outputs)):
             output = outputs[i].outputs[j].text.strip()
-            score = compute_score(output, ground_truths[i])
+            if "gpqa" in dataset_file:
+                score = compute_score_gpqa(output, ground_truths[i])
+            else:
+                score = compute_score(output, ground_truths[i])
             length = len(tokenizer.encode(output))
             all_results.append(output)
             all_scores.append(score)
@@ -225,6 +244,7 @@ if __name__ == "__main__":
         ("/mnt/blob_output/v-dachengwen/data/math/aime.parquet", "aime"),
         ("/mnt/blob_output/v-dachengwen/data/math/aime_2025.parquet", "aime_2025"),
         ("/mnt/blob_output/v-dachengwen/data/math/beyond_aime.parquet", "beyond_aime"),
+        ("/mnt/blob_output/v-dachengwen/data/gpqa/gpqa.parquet", "gpqa"),
     ]
 
     if "actor/huggingface" in args.model_name:
